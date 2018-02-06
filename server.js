@@ -72,7 +72,7 @@ function gateKeeper(req, res, next) {
   console.log(parsed);
   
   let foundUser = USERS.find(function(credentials){
-      return credentials.userName === parsed.user;
+      return credentials.userName === parsed.user && credentials.password === parsed.pass;
   });
   req.user = foundUser;
   console.log(req.user);
